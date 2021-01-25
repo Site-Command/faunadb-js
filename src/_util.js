@@ -160,7 +160,7 @@ function querystringify(obj, prefix) {
       // Edge cases where we actually want to encode the value to an empty
       // string instead of the stringified value.
       //
-      if (!value && (value === null || value === undef || isNaN(value))) {
+      if (!value && (value === null || value === undefined || isNaN(value))) {
         value = ''
       }
 
@@ -196,6 +196,7 @@ function encode(input) {
 
 module.exports = {
   formatUrl: formatUrl,
+  querystringify: querystringify,
   inherits: inherits,
   isNodeEnv: isNodeEnv,
   defaults: defaults,
